@@ -21,12 +21,13 @@ def string_checker(question, valid_list, num_letters):
         
         # Runs through list and if response is an item in list (or first letter the full name is returned)
         for item in valid_list:
+            item = item.lower()
             # If 'first_letter' is set to yes then check the list for first letter and full strings
             if num_letters > 0:
                 if response == item[:num_letters] or response == item:
                     return item
             # If 'first_letter' is set to no then only check the list for full strings
-            else:
+            elif num_letters == 0:
                 if response == item:
                     return item
 
@@ -60,7 +61,6 @@ def not_blank(question, error):
 
 # Lists
 y_n_list = ["yes", "no"]
-
 allowed_units = ["g", "kg", "mL", "L"]
 
 ingre_names = []
@@ -75,8 +75,6 @@ bought_costs = []
 
 
 # Main Routine goes here
-test_yes_no = string_checker("Yes or No? ", y_n_list, 1)
-
 # Get Required Ingredient Info
 while True:
     ingredient_name = not_blank("Name of Ingredient: ", "Please enter the name of an Ingredient.")
