@@ -46,9 +46,6 @@ for item in ingre_units:
     unit_iterate += 1
     conversion_data.append(result)
 
-    if result == "error":
-        print("The conversion is not Valid")
-
 # Print process of each ingredient conversion
 print_iterate = 0
 for item in conversion_data:
@@ -57,7 +54,7 @@ for item in conversion_data:
 
     else:
         unit_converted = ingre_amounts[print_iterate] * item
-        print(f"The unit conversion for {ingre_names[print_iterate]} ({ingre_amounts[print_iterate]}{ingre_units[print_iterate]} of {bought_amounts[print_iterate]}{bought_units[print_iterate]}), is {ingre_amounts[print_iterate]}{ingre_units[print_iterate]} * {item} = {unit_converted}{bought_units[print_iterate]}")
+        print(f"The unit conversion for {ingre_names[print_iterate]} ({ingre_amounts[print_iterate]}{ingre_units[print_iterate]} of  {bought_amounts[print_iterate]}{bought_units[print_iterate]}), is {ingre_amounts[print_iterate]}{ingre_units[print_iterate]} * {item} = {unit_converted}{bought_units[print_iterate]}")
 
     print_iterate += 1
 
